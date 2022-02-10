@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:id="@+id/safwan_help"
+        android:title="@string/help"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/safwan_pizza"
+        android:title="@string/pizza"
+        app:showAsAction="always"
+        android:icon="@drawable/pizza_icon"
+        />
+    <item
+        android:id="@+id/safwan_safwan"
+        android:title="@string/safwan"
+        app:showAsAction="ifRoom" />
+</menu>

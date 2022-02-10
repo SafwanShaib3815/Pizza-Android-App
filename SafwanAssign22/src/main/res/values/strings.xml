@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SafwanShaibN01343815</string>
+    <string name="safwan">Safwan</string>
+    <string name="help">Help</string>
+    <string name="pizza">Pizza</string>
+    <string name="help_link">https://food.ndtv.com/food-drinks/an-ultimate-guide-on-how-to-order-a-pizza-1905628</string>
+    <string name="safwan_menu_item">To implement later</string>
+    <string name="phone_number">Tell:(416) 504-1044</string>
+    <string name="title_activity_my_info">MyInfoActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="myInfo">
+        Safwan Shaib\n
+        N01343815\n
+        Computer Engineering Tech\n
+        Humber College\n
+        Email: sh5safwan@hotmail.com
+    </string>
+    <string name="pizza_hut">Pizza Hut</string>
+    <string name="pizza_nova">Pizza Nova</string>
+    <string name="domino_s_pizza">Domino\'s Pizza</string>
+    <string name="pizza_pizza">Pizza Pizza</string>
+</resources>
