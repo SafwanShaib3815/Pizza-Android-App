@@ -5,16 +5,9 @@
     <string name="pizza">Pizza</string>
     <string name="help_link">https://food.ndtv.com/food-drinks/an-ultimate-guide-on-how-to-order-a-pizza-1905628</string>
     <string name="safwan_menu_item">To implement later</string>
-    <string name="phone_number">Tell:(416) 504-1044</string>
     <string name="title_activity_my_info">MyInfoActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="phone_number">tel:(416)504-1044</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="myInfo">
         Safwan Shaib\n
         N01343815\n
@@ -22,8 +15,20 @@
         Humber College\n
         Email: sh5safwan@hotmail.com
     </string>
-    <string name="pizza_hut">Pizza Hut</string>
-    <string name="pizza_nova">Pizza Nova</string>
-    <string name="domino_s_pizza">Domino\'s Pizza</string>
-    <string name="pizza_pizza">Pizza Pizza</string>
+    <string-array name="pizza_stores">
+        <item name="pizza_hut"> Pizza Hut </item>
+        <item name="pizza_nova">Pizza Nova</item>
+        <item name="domino_s_pizza">Domino\'s Pizza</item>
+        <item name="pizza_pizza">Pizza Pizza</item>
+    </string-array>
+    <string name="next">Next</string>
+    <string name="validateSelection">Please make a selection</string>
+    <string name="selectionToast1">Pizza Hut store is selected</string>
+    <string name="selectionToast2">Pizza Nova store selected</string>
+    <string name="selectionToast3">Dominos store selected</string>
+    <string name="selectionToast4">Pizza Pizza store selected</string>
+    <string name="alertMsg1">Not hungry?</string>
+    <string name="alertMsg2">Click yes to exit this app</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
