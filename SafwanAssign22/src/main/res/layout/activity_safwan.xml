@@ -22,19 +22,19 @@
 
         <RadioButton
             android:id="@+id/radioButton1"
-            style="@style/btnStyle" />
+            style="@style/btnStyle1" />
 
         <RadioButton
             android:id="@+id/radioButton2"
-            style="@style/btnStyle" />
+            style="@style/btnStyle1" />
 
         <RadioButton
             android:id="@+id/radioButton3"
-            style="@style/btnStyle" />
+            style="@style/btnStyle1" />
 
         <RadioButton
             android:id="@+id/radioButton4"
-            style="@style/btnStyle" />
+            style="@style/btnStyle1" />
 
 
     </RadioGroup>

@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,7 +27,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
+
 public class SafwanActivity extends AppCompatActivity {
+    Intent intent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,34 +50,77 @@ public class SafwanActivity extends AppCompatActivity {
         rb3.setText(pizza_stores[2]);
         rb4.setText(pizza_stores[3]);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
                 inform();
             }
         });
-        //Next button to move to the selected option's screen
+        //the Next button to move to the selected option's screen
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 RadioGroup radioGroup = (RadioGroup) findViewById(R.id.Safwan_RadioGroup);
                 int selectedRbId = radioGroup.getCheckedRadioButtonId();
+                intent = new Intent(getApplicationContext(), SafwanOrderActivity.class);
+
                 //Validate a selection
                 if (selectedRbId == -1) {
                     Toast.makeText(getApplicationContext(), R.string.validateSelection, Toast.LENGTH_SHORT).show();
                 }
                 if (selectedRbId == R.id.radioButton1) {
-                    //Toast.makeText(getApplicationContext(), "move to bt1 special screen", Toast.LENGTH_LONG).show();
+                    Button rb1 = (Button) findViewById(R.id.radioButton1);
+
+                    Bitmap bitmap = BitmapFactory.decodeResource
+                            (getResources(), R.drawable.pizzahut_image);
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+                    intent.putExtra("byteArray", bos.toByteArray());
+
+                    String sendHut = rb1.getText().toString();
+                    intent.putExtra(getString(R.string.storeSelection), sendHut);
+                    startActivity(intent);
                 }
                 if (selectedRbId == R.id.radioButton2) {
-                    //btn2 second screen
+                    Button rb2 = (Button) findViewById(R.id.radioButton2);
+
+                    Bitmap bitmap = BitmapFactory.decodeResource
+                            (getResources(), R.drawable.nova_image);
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+                    intent.putExtra("byteArray", bos.toByteArray());
+
+                    String sendNova = rb2.getText().toString();
+                    intent.putExtra(getString(R.string.storeSelection), sendNova);
+                    startActivity(intent);
                 }
                 if (selectedRbId == R.id.radioButton3) {
-                    //btn3 second screen
+                    Button rb3 = (Button) findViewById(R.id.radioButton3);
+
+                    Bitmap bitmap = BitmapFactory.decodeResource
+                            (getResources(), R.drawable.dominos_image);
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+                    intent.putExtra("byteArray", bos.toByteArray());
+
+                    String sendDominos = rb3.getText().toString();
+                    intent.putExtra(getString(R.string.storeSelection), sendDominos);
+                    startActivity(intent);
                 }
                 if (selectedRbId == R.id.radioButton4){
-                    //btn4 seconf screen
+                    Button rb4 = (Button) findViewById(R.id.radioButton4);
+
+                    Bitmap bitmap = BitmapFactory.decodeResource
+                            (getResources(), R.drawable.pizzapizza_image);
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+                    intent.putExtra("byteArray", bos.toByteArray());
+
+                    String sendPizzapizza = rb4.getText().toString();
+                    intent.putExtra(getString(R.string.storeSelection), sendPizzapizza);
+                    startActivity(intent);
                 }
             }
         });
@@ -98,7 +146,7 @@ public class SafwanActivity extends AppCompatActivity {
             }
         }
 
-
+//Implementing menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -109,7 +157,6 @@ public class SafwanActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = null;
         switch (item.getItemId()) {
             case R.id.safwan_help:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.help_link)));
@@ -143,7 +190,7 @@ public class SafwanActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
             }
-        }).setIcon(R.drawable.exiticon)
+        }).setIcon(R.drawable.exit_icon)
         .show();
     }
 
