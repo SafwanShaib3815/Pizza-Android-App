@@ -6,97 +6,177 @@
     android:layout_height="match_parent"
     tools:context=".SafwanOrderActivity">
 
-    <RadioGroup
-        android:id="@+id/size_rbg"
-        android:layout_width="120dp"
-        android:layout_height="219dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <RadioButton
-            android:id="@+id/size_rb1"
-            style="@style/btnStyle2"
-            android:text="Small" />
-
-        <RadioButton
-            android:id="@+id/size_rb2"
-            style="@style/btnStyle2"
-            android:text="Medium" />
-
-        <RadioButton
-            android:id="@+id/size_rb3"
-            style="@style/btnStyle2"
-            android:text="Large" />
-
-        <RadioButton
-            android:id="@+id/size_rb4"
-            style="@style/btnStyle2"
-            android:text="X Large" />
-    </RadioGroup>
-
     <ImageView
         android:id="@+id/rcv_store_img"
         android:layout_width="204dp"
         android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="132dp"
         app:layout_constraintStart_toEndOf="@+id/type_rbg"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/size_rbg_text"
-        style="@style/textStyle"
+    <Button
+        android:id="@+id/next_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="8dp"
-        android:text="Select the size:"
-        app:layout_constraintBottom_toTopOf="@+id/size_rbg"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/prev_btn1" />
+
+    <CheckBox
+        android:id="@+id/chbx6"
+        style="@style/chbxStyle"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/extra_cheese"
+        app:layout_constraintStart_toEndOf="@+id/chbx5"
+        app:layout_constraintTop_toBottomOf="@+id/chbx4" />
+
+    <CheckBox
+        android:id="@+id/chbx2"
+        style="@style/chbxStyle"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sausage"
+        app:layout_constraintStart_toEndOf="@+id/chbx1"
+        app:layout_constraintTop_toBottomOf="@+id/toppings_rbg_text" />
+
+    <CheckBox
+        android:id="@+id/chbx4"
+        style="@style/chbxStyle"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/green_pepper"
+        app:layout_constraintStart_toEndOf="@+id/chbx3"
+        app:layout_constraintTop_toBottomOf="@+id/chbx2" />
+
+    <CheckBox
+        android:id="@+id/chbx3"
+        style="@style/chbxStyle"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/onion"
+        app:layout_constraintStart_toEndOf="@+id/size_rbg"
+        app:layout_constraintTop_toBottomOf="@+id/chbx1" />
+
+    <CheckBox
+        android:id="@+id/chbx1"
+        style="@style/chbxStyle"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/mushroom"
+        app:layout_constraintStart_toEndOf="@+id/size_rbg"
+        app:layout_constraintTop_toBottomOf="@+id/toppings_rbg_text" />
+
+    <CheckBox
+        android:id="@+id/chbx5"
+        style="@style/chbxStyle"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/pepperoni"
+        app:layout_constraintStart_toEndOf="@+id/size_rbg"
+        app:layout_constraintTop_toBottomOf="@+id/chbx3" />
+
+    <TextView
+        android:id="@+id/type_rbg_text"
+        style="@style/textStyle"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/select_the_type"
+
+        app:layout_constraintBottom_toTopOf="@+id/type_rbg"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
         android:id="@+id/type_rbg"
         android:layout_width="150dp"
-        android:layout_height="229dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="56dp"
         app:layout_constraintBottom_toTopOf="@+id/size_rbg"
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
             android:id="@+id/type_rb1"
             style="@style/btnStyle2"
-            android:text="Veggie " />
+            android:text="@string/veggie" />
 
         <RadioButton
             android:id="@+id/type_rb2"
             style="@style/btnStyle2"
-            android:text="Pepperoni" />
+            android:text="@string/pepperoni" />
 
         <RadioButton
-            android:id="@+id/tyep_rb3"
+            android:id="@+id/type_rb3"
             style="@style/btnStyle2"
-            android:text="Cheese" />
+            android:text="@string/cheese" />
 
         <RadioButton
             android:id="@+id/type_rb4"
             style="@style/btnStyle2"
-            android:text="Meat " />
+            android:text="@string/meat" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/size_rbg"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/size_rb1"
+            style="@style/btnStyle2"
+            android:text="@string/small" />
+
+        <RadioButton
+            android:id="@+id/size_rb2"
+            style="@style/btnStyle2"
+            android:text="@string/medium" />
+
+        <RadioButton
+            android:id="@+id/size_rb3"
+            style="@style/btnStyle2"
+            android:text="@string/large" />
+
+        <RadioButton
+            android:id="@+id/size_rb4"
+            style="@style/btnStyle2"
+            android:text="@string/x_large" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/type_rbg_text"
+        android:id="@+id/size_rbg_text"
         style="@style/textStyle"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/select_the_size"
+        app:layout_constraintBottom_toTopOf="@+id/size_rbg"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/toppings_rbg_text"
+        style="@style/textStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="400dp"
+        android:text="@string/select_toppings"
+        app:layout_constraintStart_toEndOf="@+id/size_rbg_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/prev_btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="12dp"
-        android:text="Select the type:"
-
-        app:layout_constraintBottom_toTopOf="@+id/type_rbg"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="56dp"
+        android:text="@string/previous"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -107,27 +187,8 @@
         android:layout_marginTop="24dp"
         android:textAlignment="center"
         android:textSize="48sp"
+        android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/prev_btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="68dp"
-        android:text="Previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/size_rbg" />
-
-    <Button
-        android:id="@+id/next_btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="68dp"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/prev_btn1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

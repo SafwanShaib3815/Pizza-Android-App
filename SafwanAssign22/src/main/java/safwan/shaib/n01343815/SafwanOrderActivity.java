@@ -13,8 +13,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -36,24 +39,54 @@ public class SafwanOrderActivity extends AppCompatActivity {
 
         storeImage.setImageBitmap(bitmap);
 
-        //Next button
+        //Next button implementation
         next = (Button) findViewById(R.id.next_btn2);
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                RadioGroup radioGroup1, radioGroup2;
+                CheckBox chbx1, chbx2, chbx3, chbx4, chbx5, chbx6;
+
+                radioGroup1 = (RadioGroup) findViewById(R.id.type_rbg);
+                radioGroup2 = (RadioGroup) findViewById(R.id.size_rbg);
+                int selectedRbId1 = radioGroup1.getCheckedRadioButtonId();
+                int selectedRbId2 = radioGroup2.getCheckedRadioButtonId();
+
+                chbx1 = (CheckBox) findViewById(R.id.chbx1);
+                chbx2 = (CheckBox) findViewById(R.id.chbx2);
+                chbx3 = (CheckBox) findViewById(R.id.chbx3);
+                chbx4 = (CheckBox) findViewById(R.id.chbx4);
+                chbx5 = (CheckBox) findViewById(R.id.chbx5);
+                chbx6 = (CheckBox) findViewById(R.id.chbx6);
+
+
+                //Validate the type and size selections
+                if ((selectedRbId1 == -1) || (selectedRbId2 == -1) ) {
+                    Toast.makeText(getApplicationContext(), R.string.validateSelection2, Toast.LENGTH_SHORT).show();
+                }
+
+                //Validate toppings selections
+                else if(!(chbx1.isChecked()||chbx2.isChecked()||chbx3.isChecked()||chbx4.isChecked()||chbx5.isChecked()||chbx6.isChecked()))
+                {
+                    Toast.makeText(getApplicationContext(), R.string.validateSelection3, Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                //Show snackbar to confirm moving to next screen
                 Snackbar.make(view, R.string.sbtext1, Snackbar.LENGTH_LONG)
                         .setAction(getString(R.string.sbyes), new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
-//                                        Intent intent = new Intent(getApplicationContext(),SafwanPaymentActivity.class);
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),SafwanPaymentActivity.class);
+                                        startActivity(intent);
                                     }
                                 }
                         )
                         .setActionTextColor(getResources().getColor(android.R.color.holo_purple))
                         .show();
             }
-        });
+        }});
 
 
 

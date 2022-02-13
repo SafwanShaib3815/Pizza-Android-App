@@ -68,7 +68,7 @@ public class SafwanActivity extends AppCompatActivity {
 
                 //Validate a selection
                 if (selectedRbId == -1) {
-                    Toast.makeText(getApplicationContext(), R.string.validateSelection, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.validateSelection1, Toast.LENGTH_SHORT).show();
                 }
                 if (selectedRbId == R.id.radioButton1) {
                     Button rb1 = (Button) findViewById(R.id.radioButton1);
