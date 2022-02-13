@@ -8,8 +8,8 @@
 
     <RadioGroup
         android:id="@+id/size_rbg"
-        android:layout_width="100dp"
-        android:layout_height="232dp"
+        android:layout_width="120dp"
+        android:layout_height="219dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,5 +109,25 @@
         android:textSize="48sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/prev_btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="68dp"
+        android:text="Previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/size_rbg" />
+
+    <Button
+        android:id="@+id/next_btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="68dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/prev_btn1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

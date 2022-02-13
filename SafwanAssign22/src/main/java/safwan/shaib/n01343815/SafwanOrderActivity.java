@@ -11,8 +11,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class SafwanOrderActivity extends AppCompatActivity {
 
@@ -23,7 +27,7 @@ public class SafwanOrderActivity extends AppCompatActivity {
 
         TextView storeSelection = (TextView) findViewById(R.id.rcv_store_selection);
         ImageView storeImage = (ImageView) findViewById(R.id.rcv_store_img);
-
+        Button next,prev;
         storeSelection.setText(getIntent().getStringExtra(getString(R.string.storeSelection)));
 
         Bitmap bitmap = BitmapFactory.decodeByteArray(
@@ -32,7 +36,40 @@ public class SafwanOrderActivity extends AppCompatActivity {
 
         storeImage.setImageBitmap(bitmap);
 
+        //Next button
+        next = (Button) findViewById(R.id.next_btn2);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, R.string.sbtext1, Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.sbyes), new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+//                                        Intent intent = new Intent(getApplicationContext(),SafwanPaymentActivity.class);
+//                                        startActivity(intent);
+                                    }
+                                }
+                        )
+                        .setActionTextColor(getResources().getColor(android.R.color.holo_purple))
+                        .show();
+            }
+        });
+
+
+
+
+        //Previous button
+        prev = (Button) findViewById(R.id.prev_btn1);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),SafwanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 
 
 
@@ -64,6 +101,5 @@ public class SafwanOrderActivity extends AppCompatActivity {
         }
         return true;
     }
-
 
 }

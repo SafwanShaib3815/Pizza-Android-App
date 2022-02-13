@@ -33,4 +33,6 @@
     <string name="no">No</string>
     <string name="storeSelection">selected store</string>
     <string name="storeImage">store image</string>
+    <string name="sbtext1">Move to payment?</string>
+    <string name="sbyes">Yes</string>
 </resources>
