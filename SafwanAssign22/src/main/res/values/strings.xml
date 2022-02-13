@@ -32,4 +32,5 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="storeSelection">selected store</string>
+    <string name="storeImage">store image</string>
 </resources>

@@ -77,7 +77,7 @@ public class SafwanActivity extends AppCompatActivity {
                             (getResources(), R.drawable.pizzahut_image);
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
-                    intent.putExtra("byteArray", bos.toByteArray());
+                    intent.putExtra(getString(R.string.storeImage), bos.toByteArray());
 
                     String sendHut = rb1.getText().toString();
                     intent.putExtra(getString(R.string.storeSelection), sendHut);
@@ -90,7 +90,7 @@ public class SafwanActivity extends AppCompatActivity {
                             (getResources(), R.drawable.nova_image);
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
-                    intent.putExtra("byteArray", bos.toByteArray());
+                    intent.putExtra(getString(R.string.storeImage), bos.toByteArray());
 
                     String sendNova = rb2.getText().toString();
                     intent.putExtra(getString(R.string.storeSelection), sendNova);
@@ -103,7 +103,7 @@ public class SafwanActivity extends AppCompatActivity {
                             (getResources(), R.drawable.dominos_image);
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
-                    intent.putExtra("byteArray", bos.toByteArray());
+                    intent.putExtra(getString(R.string.storeImage), bos.toByteArray());
 
                     String sendDominos = rb3.getText().toString();
                     intent.putExtra(getString(R.string.storeSelection), sendDominos);
@@ -116,7 +116,7 @@ public class SafwanActivity extends AppCompatActivity {
                             (getResources(), R.drawable.pizzapizza_image);
                     ByteArrayOutputStream bos = new ByteArrayOutputStream();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
-                    intent.putExtra("byteArray", bos.toByteArray());
+                    intent.putExtra(getString(R.string.storeImage), bos.toByteArray());
 
                     String sendPizzapizza = rb4.getText().toString();
                     intent.putExtra(getString(R.string.storeSelection), sendPizzapizza);

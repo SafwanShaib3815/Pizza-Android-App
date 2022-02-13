@@ -27,8 +27,8 @@ public class SafwanOrderActivity extends AppCompatActivity {
         storeSelection.setText(getIntent().getStringExtra(getString(R.string.storeSelection)));
 
         Bitmap bitmap = BitmapFactory.decodeByteArray(
-                getIntent().getByteArrayExtra("byteArray"),
-                0, getIntent().getByteArrayExtra("byteArray").length);
+                getIntent().getByteArrayExtra(getString(R.string.storeImage)),
+                0, getIntent().getByteArrayExtra(getString(R.string.storeImage)).length);
 
         storeImage.setImageBitmap(bitmap);
 
