@@ -10,6 +10,7 @@
         android:id="@+id/rcv_store_selection2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/paymentStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/rcv_store_img2"
         app:layout_constraintHorizontal_bias="0.059"
@@ -31,6 +32,7 @@
 
     <TextView
         android:id="@+id/rcv_type"
+        style="@style/paymentStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +44,7 @@
 
     <TextView
         android:id="@+id/rcv_size"
+        style="@style/paymentStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints='"Enter your full name"'
@@ -54,6 +57,7 @@
 
     <TextView
         android:id="@+id/rcv_toppings"
+        style="@style/paymentStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints="Enter your name"
@@ -65,58 +69,61 @@
         app:layout_constraintVertical_bias="0.178" />
 
     <EditText
-        android:id="@+id/user_name"
+        android:id="@+id/user_creditCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/user_name"
-        android:autofillHints="name"
+        android:autofillHints="creditCardNumber"
+        android:digits="0123456789"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="@string/user_creditCard"
+        android:inputType="number"
+        android:maxLength="19"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.551" />
 
     <EditText
         android:id="@+id/user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/user_email"
         android:autofillHints="emailAddress"
         android:ems="10"
+        android:hint="@string/user_email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintVertical_bias="0.356" />
 
     <EditText
-        android:id="@+id/user_phone"
+        android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="name"
         android:ems="10"
-        android:inputType="phone"
-        android:hint="@string/user_phone"
-        android:autofillHints="phone"
+        android:hint="@string/user_name"
+        android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.293" />
 
     <EditText
-        android:id="@+id/user_address"
+        android:id="@+id/user_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="phone"
         android:ems="10"
-        android:inputType="textPostalAddress"
-        android:hint="@string/user_address"
-        android:autofillHints="postalCode"
+        android:hint="@string/user_phone"
+        android:inputType="phone"
+        android:maxLength="15"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -125,36 +132,52 @@
         app:layout_constraintVertical_bias="0.421" />
 
     <EditText
-        android:id="@+id/user_creditCard"
+        android:id="@+id/user_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:digits="0123456789"
+        android:autofillHints="postalCode"
         android:ems="10"
-        android:inputType="number"
-        android:maxLength="19"
-        android:hint="@string/user_creditCard"
-        android:autofillHints="creditCardNumber"
+        android:hint="@string/user_address"
+        android:inputType="textPostalAddress"
+        android:maxLength="6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.485" />
 
     <EditText
-        android:id="@+id/pin_number"
+        android:id="@+id/user_pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberPassword"
-        android:hint="@string/pin_number"
         android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/pin_number"
+        android:inputType="numberPassword"
+        android:maxLength="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintVertical_bias="0.621" />
+    <EditText
+        android:id="@+id/user_creditEx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="@string/credit_exp"
+        android:maxLength="4"
+        android:autofillHints="creditCardExpirationDate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
 
     <Button
         android:id="@+id/prev_btn2"
@@ -167,5 +190,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.935" />
+
+    <Button
+        android:id="@+id/order_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

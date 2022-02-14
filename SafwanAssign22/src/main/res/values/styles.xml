@@ -30,7 +30,8 @@
     </style>
 
 <style name="paymentStyle">
-
+    <item name="android:textColor">@color/green</item>
+    <item name="android:textSize">24dp</item>
 </style>
 
 

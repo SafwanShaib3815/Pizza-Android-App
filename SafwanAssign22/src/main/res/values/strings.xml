@@ -56,9 +56,17 @@
     <string name="validateSelection2">Please select type and size</string>
     <string name="validateSelection3">Please select at least one topping</string>
     <string name="user_name">Type your name</string>
-    <string name="user_email">Type your Email</string>
-    <string name="user_phone">Phone Number</string>
+    <string name="user_email">example@domain.com</string>
+    <string name="user_phone">Ex: 437 388 2002</string>
     <string name="user_address">Postal Code</string>
     <string name="user_creditCard">Credit card number</string>
-    <string name="pin_number">Credit card pin number</string>
+    <string name="pin_number">Three digits pin</string>
+    <string name="order">Order</string>
+    <string name="credit_exp">Four digits expiration date</string>
+    <string name="validate_name">Name is required</string>
+    <string name="validate_address">Address is required</string>
+    <string name="validate_card">Credit Card info is required</string>
+    <string name="validate_pin">Pin is required</string>
+    <string name="validate_expDate">Expiration date is required</string>
+    <string name="validate_contactInfo">Either Email address or phone number is required</string>
 </resources>

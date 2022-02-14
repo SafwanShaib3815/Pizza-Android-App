@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SafwanPaymentActivity extends AppCompatActivity {
 
@@ -20,24 +24,22 @@ public class SafwanPaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safwan_payment);
 
-        Button next,prev;
-        //Get text views from this layout to edit
+        Button order,prev;
+        //Get components from this layout to edit
         TextView storeSelection, typeSelection, sizeSelection, toppingsSelection;
         storeSelection = (TextView) findViewById(R.id.rcv_store_selection2);
         typeSelection = (TextView) findViewById(R.id.rcv_type);
         sizeSelection = (TextView) findViewById(R.id.rcv_size);
         toppingsSelection = (TextView) findViewById(R.id.rcv_toppings);
+        order = (Button) findViewById(R.id.order_btn);
 
-        //Revive selected store name
+        //Recive selected store name
         storeSelection.setText(getIntent().getStringExtra(getString(R.string.storeSelection)));
-
         //Recieve selected store image
         ImageView storeImage = (ImageView) findViewById(R.id.rcv_store_img2);
             Bundle bundle = getIntent().getExtras();
             int imgval = bundle.getInt(getString(R.string.storeImage));
             storeImage.setImageResource(imgval);
-
-
         //Recive selected type
         typeSelection.setText(getIntent().getStringExtra("typeSelection"));
         //Recive selected size
@@ -46,6 +48,41 @@ public class SafwanPaymentActivity extends AppCompatActivity {
         toppingsSelection.setText(getIntent().getStringExtra("toppingsSelection"));
 
 
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //get components from this layout to validate
+                EditText name, email, phone, addr, cCard, pin, cExp;
+                name = (EditText) findViewById(R.id.user_name);
+                email = (EditText) findViewById(R.id.user_email);
+                phone = (EditText) findViewById(R.id.user_phone);
+                addr = (EditText) findViewById(R.id.user_address);
+                cCard = (EditText) findViewById(R.id.user_creditCard);
+                pin = (EditText) findViewById(R.id.user_pin);
+                cExp = (EditText) findViewById(R.id.user_creditEx);
+
+                //Validate inputs
+                if(TextUtils.isEmpty(name.getText())){
+                    name.setError(getString(R.string.validate_name));
+                }
+                if(TextUtils.isEmpty(email.getText()) && TextUtils.isEmpty(phone.getText())){
+                    Toast.makeText(getApplicationContext(),R.string.validate_contactInfo, Toast.LENGTH_LONG).show();
+                }
+                if(TextUtils.isEmpty(addr.getText())){
+                    addr.setError(getString(R.string.validate_address));
+                }
+                if(TextUtils.isEmpty(cCard.getText())){
+                    cCard.setError(getString(R.string.validate_card));
+                }
+                if(TextUtils.isEmpty(pin.getText())){
+                    pin.setError(getString(R.string.validate_pin));
+                }
+                if(TextUtils.isEmpty(cExp.getText())){
+                    cExp.setError(getString(R.string.validate_expDate));
+                }
+
+            }
+        });
 
 
 
