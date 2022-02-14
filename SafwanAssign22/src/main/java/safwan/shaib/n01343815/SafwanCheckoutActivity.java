@@ -3,12 +3,16 @@ package safwan.shaib.n01343815;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class SafwanCheckoutActivity extends AppCompatActivity {
@@ -19,8 +23,11 @@ public class SafwanCheckoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_safwan_checkout);
 
         //get textviews from this layout to contain user info from payment screen
-        TextView name, email, phone, addr, cCard, pin, cExp, delivery;
+        TextView name, email, phone, addr, cCard, pin, cExp, delivery, confirm;
         Boolean isDelivery;
+        Button chckOut = (Button) findViewById(R.id.chck_out);
+
+        confirm = (TextView) findViewById(R.id.confirm);
 
         name = (TextView) findViewById(R.id.get_name);
         name.setText(getIntent().getStringExtra(getResources().getString(R.string.send_name)));
@@ -44,6 +51,31 @@ public class SafwanCheckoutActivity extends AppCompatActivity {
             delivery.setText(R.string.pickup_msg);
         }
 
+        chckOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                builder.setTitle(R.string.alert2_title)
+                        .setMessage(R.string.alert2_msg)
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                int random = (int)(Math.random() * 50 + 1);
+                                String confMsg = getString(R.string.confMsg) + random;
+                                confirm.setText(confMsg);
+                            }
+                        })
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                                Intent intent = new Intent(getApplicationContext(), SafwanActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .show();
+            }
+        });
 
 
     }
