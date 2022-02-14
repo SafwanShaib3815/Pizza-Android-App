@@ -8,23 +8,18 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
-
-import java.io.ByteArrayOutputStream;
 
 public class SafwanOrderActivity extends AppCompatActivity {
 
@@ -56,6 +51,11 @@ public class SafwanOrderActivity extends AppCompatActivity {
             radioGroup2 = (RadioGroup) findViewById(R.id.size_rbg);
             int selectedRbId1 = radioGroup1.getCheckedRadioButtonId();
             int selectedRbId2 = radioGroup2.getCheckedRadioButtonId();
+            RadioButton typeSelected, sizeSelected;
+            typeSelected = (RadioButton) findViewById(selectedRbId1);
+            sizeSelected = (RadioButton) findViewById(selectedRbId2);
+
+
 
             chbx1 = (CheckBox) findViewById(R.id.chbx1);
             chbx2 = (CheckBox) findViewById(R.id.chbx2);
@@ -64,19 +64,19 @@ public class SafwanOrderActivity extends AppCompatActivity {
             chbx5 = (CheckBox) findViewById(R.id.chbx5);
             chbx6 = (CheckBox) findViewById(R.id.chbx6);
 
-
-            //Validate the type and size selections
-            if ((selectedRbId1 == -1) || (selectedRbId2 == -1) ) {
-                Toast.makeText(getApplicationContext(), R.string.validateSelection2, Toast.LENGTH_SHORT).show();
-            }
-
             //Validate toppings selections
-            else if(!(chbx1.isChecked()||chbx2.isChecked()||chbx3.isChecked()||chbx4.isChecked()||chbx5.isChecked()||chbx6.isChecked()))
+            if(!(chbx1.isChecked()||chbx2.isChecked()||chbx3.isChecked()||chbx4.isChecked()||chbx5.isChecked()||chbx6.isChecked()))
             {
                 Toast.makeText(getApplicationContext(), R.string.validateSelection3, Toast.LENGTH_SHORT).show();
             }
+            //Validate the type and size selections
+            else if ((selectedRbId1 == -1) ||(selectedRbId2 == -1) )  {
+                Toast.makeText(getApplicationContext(), R.string.validateSelection2, Toast.LENGTH_SHORT).show();
+            }
+
             else
             {
+
             //Show snackbar to confirm moving to next screen
             Snackbar.make(view, R.string.sbtext1, Snackbar.LENGTH_LONG)
                     .setAction(getString(R.string.sbyes), view1 -> {
@@ -100,6 +100,36 @@ public class SafwanOrderActivity extends AppCompatActivity {
                                     case "Pizza Pizza":
                                         intent.putExtra(getString(R.string.storeImage), R.drawable.pizzapizza_image);
                                 }
+                                //Send type and size selections
+                                String sendType, sendSize;
+                                sendType = typeSelected.getText().toString();
+                                sendSize = sizeSelected.getText().toString();
+
+                                intent.putExtra("typeSelection",sendType);
+                                intent.putExtra("sizeSelection",sendSize);
+
+                                //Collect toppings in a string
+                                String sendToppings="";
+                                if(chbx1.isChecked()){
+                                    sendToppings += chbx1.getText().toString()+"   ";
+                                }
+                                if(chbx2.isChecked()){
+                                    sendToppings += chbx2.getText().toString()+"   ";
+                                }
+                                if(chbx3.isChecked()){
+                                    sendToppings += chbx3.getText().toString()+"   ";
+                                }
+                                if(chbx4.isChecked()){
+                                    sendToppings += chbx4.getText().toString()+"   ";
+                                }
+                                if(chbx5.isChecked()){
+                                    sendToppings += chbx5.getText().toString()+"   ";
+                                }
+                                if(chbx6.isChecked()){
+                                    sendToppings += chbx6.getText().toString();
+                                }
+                                //Send toppings selections
+                                intent.putExtra("toppingsSelection", sendToppings);
                         startActivity(intent);
                     }
                     )
