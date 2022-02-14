@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,14 +25,15 @@ public class SafwanPaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safwan_payment);
 
-        Button order,prev;
+        Button prev;
+        ImageButton order;
         //Get components from this layout to edit
         TextView storeSelection, typeSelection, sizeSelection, toppingsSelection;
         storeSelection = (TextView) findViewById(R.id.rcv_store_selection2);
         typeSelection = (TextView) findViewById(R.id.rcv_type);
         sizeSelection = (TextView) findViewById(R.id.rcv_size);
         toppingsSelection = (TextView) findViewById(R.id.rcv_toppings);
-        order = (Button) findViewById(R.id.order_btn);
+        order = (ImageButton) findViewById(R.id.order_btn);
 
         //Recive selected store name
         storeSelection.setText(getIntent().getStringExtra(getString(R.string.storeSelection)));
