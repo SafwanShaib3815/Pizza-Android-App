@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SafwanAssign2">
         <activity
+            android:name=".SafwanCheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".SafwanPaymentActivity"
             android:exported="false" />
         <activity

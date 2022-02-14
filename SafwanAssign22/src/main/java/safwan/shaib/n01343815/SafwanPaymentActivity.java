@@ -82,6 +82,18 @@ public class SafwanPaymentActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(cExp.getText())){
                     cExp.setError(getString(R.string.validate_expDate));
                 }
+                else{
+                    //Send user data to checkout screen
+                    Intent intent = new Intent(getApplicationContext(), SafwanCheckoutActivity.class);
+                    intent.putExtra(getString(R.string.send_name),name.getText().toString());
+                    intent.putExtra(getString(R.string.send_email),email.getText().toString());
+                    intent.putExtra(getString(R.string.send_phone),phone.getText().toString());
+                    intent.putExtra(getString(R.string.send_address),addr.getText().toString());
+                    intent.putExtra(getString(R.string.send_card),cCard.getText().toString());
+                    intent.putExtra(getString(R.string.send_pin),pin.getText().toString());
+                    intent.putExtra(getString(R.string.send_expiry),cExp.getText().toString());
+                    startActivity(intent);
+                }
 
             }
         });
