@@ -77,4 +77,7 @@
     <string name="send_card">send_card</string>
     <string name="send_pin">send_pin</string>
     <string name="send_expiry">send_expiry</string>
+    <string name="is_delivery">isDelivery</string>
+    <string name="delivery_msg">DELIVERY: Will be delivered to your home</string>
+    <string name="pickup_msg">PICKUP: We are happy to serve your in store</string>
 </resources>

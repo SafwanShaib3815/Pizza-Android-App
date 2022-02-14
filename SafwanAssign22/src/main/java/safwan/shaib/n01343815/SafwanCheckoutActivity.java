@@ -19,7 +19,9 @@ public class SafwanCheckoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_safwan_checkout);
 
         //get textviews from this layout to contain user info from payment screen
-        TextView name, email, phone, addr, cCard, pin, cExp;
+        TextView name, email, phone, addr, cCard, pin, cExp, delivery;
+        Boolean isDelivery;
+
         name = (TextView) findViewById(R.id.get_name);
         name.setText(getIntent().getStringExtra(getResources().getString(R.string.send_name)));
         email = (TextView) findViewById(R.id.get_email);
@@ -34,6 +36,13 @@ public class SafwanCheckoutActivity extends AppCompatActivity {
         cExp = (TextView) findViewById(R.id.get_expiry);
         cExp.setText(getIntent().getStringExtra(getResources().getString(R.string.send_expiry)));
 
+        delivery = (TextView) findViewById(R.id.get_delivery);
+        if(getIntent().getExtras().getBoolean(getResources().getString(R.string.is_delivery))){
+            delivery.setText(R.string.delivery_msg);
+        }
+        else {
+            delivery.setText(R.string.pickup_msg);
+        }
 
 
 

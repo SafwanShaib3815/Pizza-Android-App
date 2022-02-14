@@ -6,15 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,6 +66,9 @@ public class SafwanPaymentActivity extends AppCompatActivity {
                 pin = (EditText) findViewById(R.id.user_pin);
                 cExp = (EditText) findViewById(R.id.user_creditEx);
 
+                Switch delivery = (Switch) findViewById(R.id.switch1);
+                boolean delivery_switch = delivery.isChecked();
+
                 //Validate inputs
                 if(TextUtils.isEmpty(name.getText())){
                     name.setError(getString(R.string.validate_name));
@@ -92,6 +98,7 @@ public class SafwanPaymentActivity extends AppCompatActivity {
                     intent.putExtra(getString(R.string.send_card),cCard.getText().toString());
                     intent.putExtra(getString(R.string.send_pin),pin.getText().toString());
                     intent.putExtra(getString(R.string.send_expiry),cExp.getText().toString());
+                    intent.putExtra(getString(R.string.is_delivery), delivery_switch);
                     startActivity(intent);
                 }
 
