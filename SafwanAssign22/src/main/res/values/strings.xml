@@ -69,4 +69,5 @@
     <string name="validate_pin">Pin is required</string>
     <string name="validate_expDate">Expiration date is required</string>
     <string name="validate_contactInfo">Either Email address or phone number is required</string>
+    <string name="alphabet">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
 </resources>
